@@ -62,6 +62,8 @@ else if (app.Environment.IsDevelopment())
     }
 }
 
+// dette er en test
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
