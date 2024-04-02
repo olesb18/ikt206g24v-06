@@ -20,9 +20,9 @@ public void ConfigureServices(IServiceCollection services)
     services.AddDbContext<ApplicationDbContext>(options =>
         options.UseNpgsql(
             Configuration.GetConnectionString("DefaultConnection")));
-}  //Npgsql
+}  
 
-// Configure DbContext to use SQLite in development and PostgreSQL in production
+
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
