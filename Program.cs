@@ -15,13 +15,6 @@ builder.Logging.SetMinimumLevel(LogLevel.Information);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseNpgsql(
-            Configuration.GetConnectionString("DefaultConnection")));
-}  
-
 
 if (builder.Environment.IsDevelopment())
 {

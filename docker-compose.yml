@@ -1,0 +1,50 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      target: final
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=assignment55;Username=Hiphopgutt2;Password=Hiphopgutt2;
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=assignment55
+      - POSTGRES_USER=Hiphopgutt2
+      - POSTGRES_PASSWORD=Hiphopgutt2
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  proxy:
+    image: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+  migration:
+    build:
+      context: .
+      target: migration-env
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=assignment55;Username=Hiphopgutt2;Password=Hiphopgutt2;
+    volumes:
+      - .:/app
+    entrypoint: ["dotnet", "ef"]
+
+volumes:
+  db_data:
+  caddy_data:
+  caddy_config:
