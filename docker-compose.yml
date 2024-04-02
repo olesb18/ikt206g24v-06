@@ -5,7 +5,7 @@ services:
       context: .
       target: final
     ports:
-      - "8080:80"
+      - "8081:80"
     depends_on:
       - db
     environment:
@@ -25,7 +25,7 @@ services:
     image: caddy
     ports:
       - "80:80"
-      - "443:443"
+      - "8443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
