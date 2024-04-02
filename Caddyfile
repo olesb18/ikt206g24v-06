@@ -1,0 +1,3 @@
+ole.devopsgutta.site {
+    reverse_proxy web:8081
+}
