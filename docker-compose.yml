@@ -24,7 +24,7 @@ services:
   proxy:
     image: caddy
     ports:
-      - "80:80"
+      - "8082:80"
       - "8443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
@@ -43,6 +43,7 @@ services:
     volumes:
       - .:/app
     entrypoint: ["dotnet", "ef"]
+    command: ["migrations", "update"] 
 
 volumes:
   db_data:

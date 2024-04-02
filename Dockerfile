@@ -22,4 +22,4 @@ WORKDIR /app
 COPY --from=build-env /app/out .
 
 
-ENTRYPOINT [ "db:5432", "--", "dotnet", "Example.dll" ]
+ENTRYPOINT [ "dotnet", "Example.dll" ]
