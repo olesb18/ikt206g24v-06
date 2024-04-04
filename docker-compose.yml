@@ -10,14 +10,14 @@ services:
       - db
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=assignment5;Username=hiphopgutt2;Password=hiphopgutt2;
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=assignment5;Username=hiphopgutt1;Password=hiphopgutt1;
 
   db:
     image: postgres
     environment:
       POSTGRES_DB: assignment5
-      POSTGRES_USER: hiphopgutt2
-      POSTGRES_PASSWORD: hiphopgutt2
+      POSTGRES_USER: hiphopgutt1
+      POSTGRES_PASSWORD: hiphopgutt1
     volumes:
       - db_data:/var/lib/postgresql/data
 
@@ -39,7 +39,7 @@ services:
       - db
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=assignment5;Username=hiphopgutt2;Password=hiphopgutt2;
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=assignment5;Username=hiphopgutt1;Password=hiphopgutt1;
     volumes:
       - .:/app
     entrypoint: ["dotnet", "ef"]
