@@ -98,3 +98,13 @@ artifacts/
 
 # Tye
 .tye/
+
+# Default ignore patterns for .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.pdb
+*.dll
