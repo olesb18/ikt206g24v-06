@@ -22,6 +22,15 @@ body {
 }
 
 footer{
-  position: fixed;
+  position:absolute;
   margin-bottom: 5%;
+}
+
+.pb-3{
+  margin-top: 20%;
+}
+
+h1{
+  color: aquamarine;
+  font-size: larger;
 }
