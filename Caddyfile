@@ -1,3 +1,3 @@
-ole.devopsgutta.site {
-    reverse_proxy web:8082
+kaialgedage.no {
+    reverse_proxy web:8080
 }
