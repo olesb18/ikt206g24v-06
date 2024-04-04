@@ -264,3 +264,4 @@ C:\Users\mini-\ikt206g24v-05\obj\Debug\net8.0\refint\Example.dll
 C:\Users\mini-\ikt206g24v-05\obj\Debug\net8.0\Example.pdb
 C:\Users\mini-\ikt206g24v-05\obj\Debug\net8.0\Example.genruntimeconfig.cache
 C:\Users\mini-\ikt206g24v-05\obj\Debug\net8.0\ref\Example.dll
+C:\Users\mini-\ikt206g24v-05\bin\Debug\net8.0\app.db
