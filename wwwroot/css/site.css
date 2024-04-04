@@ -11,7 +11,7 @@ html {
 html {
   position: relative;
   min-height: 100%;
-  background-image: "kaialgedage.jpg";
+  background-image: url("kaialgedage.jpg");
 }
 
 body {
