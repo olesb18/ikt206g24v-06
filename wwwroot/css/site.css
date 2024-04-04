@@ -21,16 +21,43 @@ body {
   background-size: cover;
 }
 
-footer{
-  position:absolute;
-  margin-bottom: 5%;
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .pb-3{
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 h1{
   color: aquamarine;
   font-size: larger;
+  font-weight: bold;
 }
+
+h2{
+  color: aquamarine;
+  font-size:large;
+  font-weight: bold;
+}
+
+p{
+  color: beige;
+  font-size:medium;
+  font-weight: bold;
+}
+
+li{
+  color: beige;
+  font-size:medium;
+  font-weight: bold;
+}
+
+form{
+  color: beige;
+  font-size:medium;
+  font-weight: bold;
+}
+
