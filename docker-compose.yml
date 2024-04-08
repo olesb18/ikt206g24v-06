@@ -35,8 +35,8 @@ services:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /etc/docker/config.json:/root/.docker/config.json
-    command: --interval 10 --label-enable --cleanup
+      - /etc/docker/config.json:/config.json
+    command: --debug --interval 20 --label-enable --cleanup
     environment:
       - WATCHTOWER_NOTIFICATIONS_LEVEL=debug
     labels:
