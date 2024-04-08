@@ -36,7 +36,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/docker/config.json:/config.json
-    command: --debug --interval 20 --label-enable --cleanup
+    command: --debug --interval 20 --label-enable --cleanup --notification email --notification-email-from watchtower@example.com --notification-email-to user@example.com --notification-email-server smtp.example.com --notification-email-server-port 587 --notification-email-server-user user@example.com --notification-email-server-password password
     environment:
       - WATCHTOWER_NOTIFICATIONS_LEVEL=debug
     labels:
