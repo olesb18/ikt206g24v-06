@@ -1,23 +1,23 @@
 version: '3'
 services:
   web:
-    build:
-      context: .
-      target: final
+    image: olesb/ikt206g24v06:latest # Using image from Docker Hub
     ports:
-      - "8080:80"
+      - "8081:80"
     depends_on:
       - db
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=assignment5;Username=hiphopgutt1;Password=hiphopgutt1;
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
 
   db:
     image: postgres
     environment:
-      POSTGRES_DB: assignment5
-      POSTGRES_USER: hiphopgutt1
-      POSTGRES_PASSWORD: hiphopgutt1
+      - POSTGRES_DB=assignment5
+      - POSTGRES_USER=hiphopgutt1
+      - POSTGRES_PASSWORD=hiphopgutt1
     volumes:
       - db_data:/var/lib/postgresql/data
 
@@ -31,19 +31,16 @@ services:
       - caddy_data:/data
       - caddy_config:/config
 
-  migration:
-    build:
-      context: .
-      target: migration-env
-    depends_on:
-      - db
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Production
-      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=assignment5;Username=hiphopgutt1;Password=hiphopgutt1;
+  watchtower:
+    image: containrrr/watchtower
     volumes:
-      - .:/app
-    entrypoint: ["dotnet", "ef"]
-    #command: ["migrations", "update"]
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/docker/config.json:/config.json
+    command: --interval 30 --label-enable --cleanup
+    environment:
+      - WATCHTOWER_NOTIFICATIONS_LEVEL=debug
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
 
 volumes:
   db_data:
