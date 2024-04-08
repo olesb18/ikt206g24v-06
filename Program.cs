@@ -4,7 +4,7 @@ using Example.Data;
 using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//test
 // Configure logging
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
