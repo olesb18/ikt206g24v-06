@@ -55,7 +55,7 @@ else if (app.Environment.IsDevelopment())
     }
 }
 
-// dette er en test3
+// dette er en test4
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
