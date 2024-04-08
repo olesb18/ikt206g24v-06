@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: olesb/ikt206g24v06:latest # Using image from Docker Hub
+    image: olesb18/ikt206g24v06:latest # Using image from Docker Hub
     ports:
       - "8081:80"
     depends_on:
